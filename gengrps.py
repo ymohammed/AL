@@ -2,6 +2,7 @@ import random
 import pyodbc
 
 
+# Connection String needs to be changed for the database in use 
 
 conn_str= """    
     DRIVER={ODBC Driver 13 for SQL Server};
@@ -10,6 +11,7 @@ conn_str= """
     Trusted_Connection=yes;
     """
 
+# This Function generates groups 
 
 def gengroups():
     dbconn=pyodbc.connect(conn_str)
@@ -23,7 +25,9 @@ def gengroups():
     while len(empn)>0:
         groupno+=1
         grplist=[]
+        # Create Random groups between 3 & 5
         groupsize=random.randint(3,5)
+        # Handle the group size for the last 2 group to make sure the last group is atleast 3 employees.
         if len(empn)<groupsize or len(empn) < 10:
             if len(empn)==9:
                 groupcnt=(len(empn))-4
@@ -47,7 +51,7 @@ def gengroups():
     dbconn.close()
     return
 
-
+# This Function adds new employees to the database table.
 def addemp(emp):
     dbconn=pyodbc.connect(conn_str)
     cursor=dbconn.cursor()
@@ -57,13 +61,14 @@ def addemp(emp):
     dbconn.close()
     return        
 
+# This function generates a simple menu to add users, generate groups or exit out of application
 def menu():
     while True:
-    print "User Menu"
-    print "\ta. Add Users"
-    print "\tb. Generate Groups"
-    print "\tq. Exit"
-    n=' '
+        print "User Menu"
+        print "\ta. Add Users"
+        print "\tb. Generate Groups"
+        print "\tq. Exit"
+        n=' '
         n = raw_input("\n\n Enter your Choice: ")
         if n.lower() == 'a':
             uname = raw_input("Enter User Name: ")
@@ -77,5 +82,7 @@ def menu():
             print "invalid input, try again" 
     return
 
+# Menu Call
 menu()
+
 
