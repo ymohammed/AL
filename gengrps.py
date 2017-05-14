@@ -58,12 +58,12 @@ def addemp(emp):
     return        
 
 def menu():
+    while True:
     print "User Menu"
     print "\ta. Add Users"
     print "\tb. Generate Groups"
     print "\tq. Exit"
     n=' '
-    while True:
         n = raw_input("\n\n Enter your Choice: ")
         if n.lower() == 'a':
             uname = raw_input("Enter User Name: ")
