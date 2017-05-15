@@ -27,12 +27,10 @@ def gengroups():
         grplist=[]
         # Create Random groups between 3 & 5
         groupsize=random.randint(3,5)
-        # Handle the group size for the last 2 group to make sure the last group is atleast 3 employees.
+        # Handle the group size for the last 2 groups to make sure the last group is atleast 3 employees.
         if len(empn)<groupsize or len(empn) < 10:
-            if len(empn)==9:
-                groupcnt=(len(empn))-4
-            elif len(empn)>5:
-                groupcnt=(len(empn))-3
+            if len(empn)>5:
+                groupcnt=(len(empn))//2
             else:
                 groupcnt=len(empn)
         else:
