@@ -1,5 +1,5 @@
 ## Synopsis
-This program is written to generate random list of groups of employees at Apartment List. Each group is minimum of 3 employees and maximum of 5 employees. 
+This program is written to generate random list of groups of employees at AL. Each group is minimum of 3 employees and maximum of 5 employees. 
 
 ## Project
 This project has been implemented in python using a basic CLI. A menu is presented to the user to add new employee, generate groups or exit out of the menu. In order to keep the employee list persistent, the records are stored in a database. 
