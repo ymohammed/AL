@@ -11,7 +11,7 @@ ANSI SQL file for creating table and populating data has been included in the re
 The application checks for basic requirements like making sure groups are between three(3) and five(5), the group size is a random between
 3-5 to keep the surprise factor in picking the group size. All employees are picked randomly in the groups. However, this application
 doesn't keep track of previous groups so eventhough random, it's possible that two employees get selected into the same group in the 
-following week. However, with increasing number of employees, the probability of repeating employees in the groups goes down dramatically.
+following month. However, with increasing number of employees, the probability of repeating employees in the groups goes down dramatically.
 
 
 
